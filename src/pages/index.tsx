@@ -1,6 +1,6 @@
 
 import { FiArrowRightCircle, FiArrowLeftCircle } from 'react-icons/fi';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Header from "../components/Header"
 export default function Home() {
   const [page, setPage] = useState(1);
