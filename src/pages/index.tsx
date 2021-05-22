@@ -1,4 +1,3 @@
-
 import { FiArrowRightCircle, FiArrowLeftCircle } from 'react-icons/fi';
 import { useState } from 'react';
 import Header from "../components/Header"
