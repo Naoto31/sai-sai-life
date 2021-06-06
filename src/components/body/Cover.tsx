@@ -8,7 +8,7 @@ const Cover: React.FunctionComponent<CoverProps> = ({}) => {
      const [page, setPage] = useState(1);
   return (
     <div
-        className='w-full bg-white py-10 flex flex-col transition transform'
+        className='w-full bg-white py-24 flex flex-col transition transform'
         style={{
           backgroundImage: `url(./images/cover_${page}.jpg)`,
           backgroundPosition: 'center',
