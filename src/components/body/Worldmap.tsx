@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import * as topojson from "topojson-client";
+import { path } from "d3";
 interface Worldmap {}
 
 const Worldmap: React.FC<Worldmap> = () => {
@@ -53,6 +54,10 @@ function createChart(container: HTMLDivElement, data: any) {
     .attr("d", (d: any) => pathGenerator(d))
     .attr("fill", (d) => "#ccc");
 
+  const tooltip = document.getElementById("tooltip");
+  const title = tooltip?.querySelector("#title") as HTMLParagraphElement;
+  const imgContainer = tooltip?.querySelector("#img") as HTMLDivElement;
+  imgContainer.setAttribute("style", "width:100%;height:100%;object-fit:cover");
   paths.on("mouseenter", (d) => {
     const path = d.target as SVGPathElement;
     path.setAttribute("fill", "lightblue");
@@ -60,5 +65,19 @@ function createChart(container: HTMLDivElement, data: any) {
   paths.on("mouseout", (d) => {
     const path = d.target as SVGPathElement;
     path.setAttribute("fill", "#ccc");
+    tooltip?.setAttribute("style", "opacity:0");
+  });
+
+  paths.on("mousemove", (event: MouseEvent, d: any) => {
+    const x = event.pageX;
+    const y = event.pageY;
+
+    tooltip?.setAttribute(
+      "style",
+      `opacity:1;top:${y + 10}px;left:${x + 10}px`
+    );
+
+    title.innerText = d.properties["continent"];
+    imgContainer.innerHTML = `<img src='./images/${d.properties["continent"]}.jpg'/>`;
   });
 }
