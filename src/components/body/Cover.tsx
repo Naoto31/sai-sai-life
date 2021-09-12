@@ -1,11 +1,11 @@
-import React from 'react';
-import { useState } from 'react';
-import { FiArrowRightCircle, FiArrowLeftCircle } from 'react-icons/fi';
+import React from 'react'
+import { useState } from 'react'
+import { FiArrowRightCircle, FiArrowLeftCircle } from 'react-icons/fi'
 
 interface CoverProps {}
 
 const Cover: React.FunctionComponent<CoverProps> = ({}) => {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(1)
   return (
     <div
       className='w-full bg-white py-24 flex flex-col transition transform'
@@ -28,9 +28,9 @@ const Cover: React.FunctionComponent<CoverProps> = ({}) => {
               className='w-10 h-10 text-white hover:text-gray-200 cursor-pointer transition duration-300 transform hover:scale-110 '
               onClick={() => {
                 if (page === 1) {
-                  setPage(3);
+                  setPage(3)
                 } else {
-                  setPage(page - 1);
+                  setPage(page - 1)
                 }
               }}
             />
@@ -43,9 +43,9 @@ const Cover: React.FunctionComponent<CoverProps> = ({}) => {
             className='w-20 flex items-center justify-center'
             onClick={() => {
               if (page === 3) {
-                setPage(1);
+                setPage(1)
               } else {
-                setPage(page + 1);
+                setPage(page + 1)
               }
             }}
           >
@@ -59,7 +59,7 @@ const Cover: React.FunctionComponent<CoverProps> = ({}) => {
               (page === 1 ? 'bg-white' : 'bg-gray-400')
             }
             onClick={() => {
-              setPage(1);
+              setPage(1)
             }}
           ></div>
           <div
@@ -68,7 +68,7 @@ const Cover: React.FunctionComponent<CoverProps> = ({}) => {
               (page === 2 ? 'bg-white' : 'bg-gray-400')
             }
             onClick={() => {
-              setPage(2);
+              setPage(2)
             }}
           ></div>
           <div
@@ -77,13 +77,13 @@ const Cover: React.FunctionComponent<CoverProps> = ({}) => {
               (page === 3 ? 'bg-white' : 'bg-gray-400')
             }
             onClick={() => {
-              setPage(3);
+              setPage(3)
             }}
           ></div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Cover;
+export default Cover

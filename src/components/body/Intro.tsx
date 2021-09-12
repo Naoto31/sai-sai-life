@@ -1,43 +1,41 @@
-import { motion } from 'framer-motion';
-import * as React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useRef } from 'react';
+import { motion } from 'framer-motion'
+import * as React from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { useRef } from 'react'
 
 interface IntroProps {}
 
 const Intro: React.FunctionComponent<IntroProps> = ({}) => {
-  const [showAndHide, setShowAndHide] = useState(false);
-  const sectionRef = useRef<HTMLInputElement>(null);
+  const [showAndHide, setShowAndHide] = useState(false)
+  const sectionRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
-        setShowAndHide(true);
+        setShowAndHide(true)
       } else if (window.scrollY < 50) {
-        setShowAndHide(false);
+        setShowAndHide(false)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <div className='pt-12 mb-12 bg-gradient-to-t from-green-100 relative'>
       <motion.section
         id='profile'
         className='w-full  h-full max-w-6xl mx-auto overflow-hidden'
-        style={{height:"670px"}}
+        style={{ height: '670px' }}
         ref={sectionRef}
         transition={{ duration: 0.7 }}
         animate={
-              showAndHide
-                ? { opacity: 1, paddingTop: '0px' }
-                : { opacity: 0, paddingTop: '250px' }
-            }
+          showAndHide
+            ? { opacity: 1, paddingTop: '0px' }
+            : { opacity: 0, paddingTop: '250px' }
+        }
       >
         <div className='mb-6'>
-          <h2
-            className='text-center text-muted text-4xl text-gray-400' 
-          >
+          <h2 className='text-center text-muted text-4xl text-gray-400'>
             Greetings from Munich!
           </h2>
         </div>
@@ -58,7 +56,7 @@ const Intro: React.FunctionComponent<IntroProps> = ({}) => {
         </div>
       </motion.section>
     </div>
-  );
-};
+  )
+}
 
-export default Intro;
+export default Intro
