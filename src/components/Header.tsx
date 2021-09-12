@@ -1,23 +1,23 @@
-import React from 'react';
+import React from 'react'
 import {
   AiOutlineSearch,
   AiOutlineTwitter,
   AiOutlineInstagram,
   AiFillYoutube,
-} from 'react-icons/ai';
-import { GrFacebookOption } from 'react-icons/gr';
+} from 'react-icons/ai'
+import { GrFacebookOption } from 'react-icons/gr'
 
 interface HeaderProps {}
 
 const Header: React.FunctionComponent<HeaderProps> = ({}) => {
-  const twitterUrl = 'https://twitter.com/Nao10sai';
-  const InstagramUrl = 'https://www.instagram.com/saisai.life/';
-  const FacebookUrl = 'https://www.facebook.com/saisai.life';
-  const YouTubeUrl = 'https://www.youtube.com/channel/UCmW8u1MGJ0ixIMXLahnPf3g';
+  const twitterUrl = 'https://twitter.com/Nao10sai'
+  const InstagramUrl = 'https://www.instagram.com/saisai.life/'
+  const FacebookUrl = 'https://www.facebook.com/saisai.life'
+  const YouTubeUrl = 'https://www.youtube.com/channel/UCmW8u1MGJ0ixIMXLahnPf3g'
 
   const openSNS = (url: string) => {
-    window.open(url, '_blank');
-  };
+    window.open(url, '_blank')
+  }
 
   return (
     <div className='w-full bg-gray-800 h-12'>
@@ -26,25 +26,25 @@ const Header: React.FunctionComponent<HeaderProps> = ({}) => {
           <AiOutlineTwitter
             className='w-6 h-6 text-gray-400 hover:text-gray-200 cursor-pointer mx-2'
             onClick={(e) => {
-              openSNS(twitterUrl);
+              openSNS(twitterUrl)
             }}
           />
           <AiOutlineInstagram
             className='w-6 h-6 text-gray-400 hover:text-gray-200 cursor-pointer mx-2'
             onClick={(e) => {
-              openSNS(InstagramUrl);
+              openSNS(InstagramUrl)
             }}
           />
           <GrFacebookOption
             className='w-6 h-6 text-gray-400 hover:text-gray-200 cursor-pointer mx-2'
             onClick={(e) => {
-              openSNS(FacebookUrl);
+              openSNS(FacebookUrl)
             }}
           />
           <AiFillYoutube
             className='w-6 h-6 text-gray-400 hover:text-gray-200 cursor-pointer mx-2'
             onClick={(e) => {
-              openSNS(YouTubeUrl);
+              openSNS(YouTubeUrl)
             }}
           />
         </div>
@@ -53,7 +53,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({}) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
